@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".UserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/user_layout"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/user_image"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/dummy_content"
+            android:src="@drawable/ic_person"
+            />
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:text="@string/guest"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyButton"
+            android:text="Выйти"
+            android:id="@+id/logout_button"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:minWidth="300dp"
+        android:id="@+id/login">
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            tools:ignore="HardcodedText"
+            android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            tools:ignore="HardcodedText"
+            android:inputType="textPassword"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/MyButton"
+                android:text="Войти"
+                android:id="@+id/login_button"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/MyButton"
+                android:text="Регистрация"
+                android:id="@+id/register_button"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/google_signin"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal"
+            />
+    </LinearLayout>
+</LinearLayout>

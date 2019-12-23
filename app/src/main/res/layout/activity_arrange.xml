@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArrangeActivity"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:columnCount="10"
+        android:rowCount="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W, 1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.artisanter.battleship.GameGridLayout
+            android:id="@+id/my_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ship" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/game_id"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:lines="1"
+                android:text="@string/dummy_content"
+                android:textSize="16sp"
+                />
+            <CheckBox
+                android:id="@+id/ready_button"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:enabled="false"
+                android:text="Ready"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:minWidth="100dp">
+
+            <Button
+                android:id="@+id/x4_counter"
+                style="@style/Ship"
+                android:layout_width="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ship"
+                android:text="x4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H, 1:4"
+                app:layout_constraintEnd_toStartOf="@+id/x3_counter"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/x3_counter"
+                style="@style/Ship"
+                android:layout_width="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ship"
+                android:text="x3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H, 1:3"
+                app:layout_constraintEnd_toStartOf="@+id/x2_counter"
+                app:layout_constraintStart_toEndOf="@+id/x4_counter" />
+
+            <Button
+                android:id="@+id/x2_counter"
+                style="@style/Ship"
+                android:layout_width="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ship"
+                android:text="x2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H, 1: 2"
+                app:layout_constraintEnd_toStartOf="@+id/x1_counter"
+                app:layout_constraintStart_toEndOf="@+id/x3_counter" />
+
+            <Button
+                android:id="@+id/x1_counter"
+                style="@style/Ship"
+                android:layout_width="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ship"
+                android:text="x1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H, 1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/x2_counter" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/clear"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear" />
+
+            <Button
+                android:id="@+id/remove"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/remove" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
